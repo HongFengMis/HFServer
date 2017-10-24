@@ -106,6 +106,35 @@ Rooms.Index.act = function(){
             IO.emit({to:"Film8" , key:"MediaPlayLoop"});
             //IO.emit({to:"door2" , key:"open"});
         }
+    });
+
+    var GuestMode = $("#GuestMode").find(".btn");
+    GuestMode.tap(function(e){
+        e.stopPropagation();
+
+        if(GuestMode.hasClass("act")){
+            GuestMode.removeClass("act");
+            IO.emit({to:"Film1" , key:"GuestModeEnd"});
+            IO.emit({to:"Film2" , key:"GuestModeEnd"});
+            IO.emit({to:"Film3" , key:"GuestModeEnd"});
+            IO.emit({to:"Film4" , key:"GuestModeEnd"});
+            IO.emit({to:"Film5" , key:"GuestModeEnd"});
+            IO.emit({to:"Film6" , key:"GuestModeEnd"});
+            IO.emit({to:"Film7" , key:"GuestModeEnd"});
+            IO.emit({to:"Film8" , key:"GuestModeEnd"});
+            //IO.emit({to:"door2" , key:"close"});
+        }else{
+            GuestMode.addClass("act");
+            IO.emit({to:"Film1" , key:"GuestMode"});
+            IO.emit({to:"Film2" , key:"GuestMode"});
+            IO.emit({to:"Film3" , key:"GuestMode"});
+            IO.emit({to:"Film4" , key:"GuestMode"});
+            IO.emit({to:"Film5" , key:"GuestMode"});
+            IO.emit({to:"Film6" , key:"GuestMode"});
+            IO.emit({to:"Film7" , key:"GuestMode"});
+            IO.emit({to:"Film8" , key:"GuestMode"});
+            //IO.emit({to:"door2" , key:"open"});
+        }
     })
 
 };

@@ -157,6 +157,14 @@
 				<div class="btn"></div>
 			</div>
 
+			<div class="box box4" id="GuestMode">
+				<div class="txt">
+					<p class="txt_en">Play as <br>Guest</p>
+					<p class="txt_cn">游客光观</p>
+				</div>
+				<div class="btn"></div>
+			</div>
+
 		</div>
 	</section>
 
@@ -635,7 +643,7 @@
 		//连接服务器，更新操作
 		Url.server = "http://192.168.44.10:844";
         //Url.server = "http://192.168.1.104:844";
-		Server.connect(Url.server+"/uploads/guide.php" , function(){
+//		Server.connect(Url.server+"/uploads/guide.php" , function(){
 			//页面预定义
 			IO.Type = "guide";
 			IO.Name = "guide";
@@ -652,7 +660,7 @@
 					ws.conn();
 				},1000);
 			});
-		});
+//		});
 	});
 
 	$('body').on('touchmove', function (event) { event.preventDefault(); });
